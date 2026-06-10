@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Cursor from './components/Cursor';
-import Marquee from './components/Marquee';
 import Hero from './components/Hero';
 import About from './components/About';
 import Gallery from './components/Gallery';
@@ -80,7 +79,6 @@ function App() {
             transition={{ duration: 1, delay: 0.2 }}
           >
             <Navbar />
-            <Marquee />
             <Hero />
             <About />
             <Gallery />

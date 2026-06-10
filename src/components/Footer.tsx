@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Twitter, Instagram, Linkedin, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
+import { ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const Footer: React.FC = () => {
               Empowering the next generation with innovation, excellence, and character. Shaping future leaders since 1995.
             </p>
             <div className="flex items-center gap-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+              {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map((Icon, i) => (
                 <motion.a 
                   key={i} 
                   href="#" 
