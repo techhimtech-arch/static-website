@@ -15,12 +15,12 @@ const Footer: React.FC = () => {
           <div className="lg:pr-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-brand-500 rounded-lg flex items-center justify-center">
-                <span className="font-display font-black text-xl text-white">H</span>
+                <span className="font-display font-black text-xl text-white">G</span>
               </div>
-              <span className="font-display font-bold text-2xl tracking-wide">HIMTECH</span>
+              <span className="font-display font-bold text-2xl tracking-wide">GURUKUL</span>
             </div>
             <p className="text-slate-400 mb-8 leading-relaxed">
-              Empowering the next generation with innovation, excellence, and character. Shaping future leaders since 1995.
+              Modernity With Tradition. Co-educational CBSE school from Pre-Nursery to Class 10th.
             </p>
             <div className="flex items-center gap-4">
               {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map((Icon, i) => (
@@ -57,15 +57,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-6 text-slate-400">
               <li className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-brand-400 shrink-0 mt-1" />
-                <span>123 Innovation Drive,<br/>Tech City, TC 45678</span>
+                <span>Ghanatti Road, Near Forest Rest House,<br/>Village Khanol, Kunihar, Solan, HP — 173207</span>
               </li>
               <li className="flex items-center gap-4">
                 <Phone className="w-6 h-6 text-brand-400 shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 86298 20098, +91 86298 80098</span>
               </li>
               <li className="flex items-center gap-4">
                 <Mail className="w-6 h-6 text-brand-400 shrink-0" />
-                <span>admissions@himtech.edu</span>
+                <span>giskunihar@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            &copy; {new Date().getFullYear()} Himtech School. All rights reserved.
+            &copy; {new Date().getFullYear()} Gurukul International School. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-slate-500">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

@@ -49,9 +49,9 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <a href="#hero" onClick={(e) => scrollToSection(e, '#hero')} className="hover-target text-slate-900 dark:text-white flex items-center gap-3 group">
             <div className="w-10 h-10 bg-brand-500 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform">
-              <span className="font-display font-black text-xl text-white">H</span>
+              <span className="font-display font-black text-xl text-white">G</span>
             </div>
-            <span className="font-display font-bold text-xl tracking-wide hidden sm:block">HIMTECH</span>
+            <span className="font-display font-bold text-xl tracking-wide hidden sm:block">GURUKUL</span>
           </a>
 
           {/* Desktop Links */}

@@ -13,7 +13,7 @@ const testimonials = [
   {
     name: "Dr. Arun Patel",
     role: "Alumnus (Batch of 2012)",
-    content: "The foundation I received at Himtech was instrumental in my medical career. The emphasis on practical labs and independent thinking is unmatched.",
+    content: "The foundation I received at Gurukul was instrumental in my medical career. The emphasis on practical labs and independent thinking is unmatched.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
   },

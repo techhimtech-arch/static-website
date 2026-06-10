@@ -134,8 +134,8 @@ const ContactForm: React.FC = () => {
                 <MapPin className="w-8 h-8 text-white relative z-10" />
               </div>
               <div className="bg-white dark:bg-slate-900 px-6 py-3 rounded-2xl shadow-xl text-center">
-                <h4 className="font-bold text-slate-900 dark:text-white">Himtech Campus</h4>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Tech City, TC 45678</p>
+                <h4 className="font-bold text-slate-900 dark:text-white">Gurukul Campus</h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400">Kunihar, Solan, HP</p>
               </div>
             </motion.div>
           </div>

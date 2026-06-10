@@ -39,7 +39,7 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
           animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
         >
-          HIMTECH SCHOOL
+          GURUKUL INTERNATIONAL SCHOOL
         </motion.h1>
       </div>
       <div className="overflow-hidden mt-2">
@@ -49,7 +49,7 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
           animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
         >
-          Shaping the Future
+          Modernity With Tradition
         </motion.p>
       </div>
     </motion.div>
