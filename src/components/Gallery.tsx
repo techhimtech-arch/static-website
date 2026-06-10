@@ -43,7 +43,7 @@ const Gallery: React.FC = () => {
         trigger: sectionRef.current,
         pin: true,
         scrub: 1,
-        end: () => "+=" + trackRef.current?.offsetWidth * 1.5, // Make scroll longer for smoother effect
+        end: () => "+=" + (trackRef.current?.offsetWidth || 0) * 1.5, // Make scroll longer for smoother effect
       }
     });
 
@@ -53,7 +53,7 @@ const Gallery: React.FC = () => {
     });
 
     // Add parallax effect to images inside the scrolling track
-    imagesArray.forEach((img, i) => {
+    imagesArray.forEach((img) => {
       gsap.to(img, {
         xPercent: 20, // Images move slightly right while container moves left
         ease: "none",
@@ -61,7 +61,7 @@ const Gallery: React.FC = () => {
           trigger: sectionRef.current,
           scrub: 1,
           start: "top top",
-          end: () => "+=" + trackRef.current?.offsetWidth * 1.5,
+          end: () => "+=" + (trackRef.current?.offsetWidth || 0) * 1.5,
         }
       });
     });

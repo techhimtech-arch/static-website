@@ -77,25 +77,25 @@ const Hero: React.FC = () => {
 
         <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-display font-black text-white tracking-tighter mb-6 leading-none">
           <span className="inline-block overflow-hidden pb-4">
-            <span ref={el => textRefs.current[0] = el} className="inline-block origin-bottom-left">Future</span>
-            <span ref={el => textRefs.current[1] = el} className="inline-block ml-4 md:ml-8 text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-indigo-400 origin-bottom-left">Ready</span>
+            <span ref={el => { textRefs.current[0] = el; }} className="inline-block origin-bottom-left">Future</span>
+            <span ref={el => { textRefs.current[1] = el; }} className="inline-block ml-4 md:ml-8 text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-indigo-400 origin-bottom-left">Ready</span>
           </span>
           <br />
           <span className="inline-block overflow-hidden pb-4">
-            <span ref={el => textRefs.current[2] = el} className="inline-block origin-bottom-left">Education</span>
+            <span ref={el => { textRefs.current[2] = el; }} className="inline-block origin-bottom-left">Education</span>
           </span>
         </h1>
         
         <div className="overflow-hidden mb-12">
           <p className="text-xl md:text-3xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
-            <span ref={el => textRefs.current[3] = el} className="inline-block">
+            <span ref={el => { textRefs.current[3] = el; }} className="inline-block">
               Empowering the next generation with <span className="text-white font-medium">innovation</span>, <span className="text-white font-medium">excellence</span>, and <span className="text-white font-medium">character</span>.
             </span>
           </p>
         </div>
 
         <div className="overflow-hidden">
-          <div ref={el => textRefs.current[4] = el} className="inline-block">
+          <div ref={el => { textRefs.current[4] = el; }} className="inline-block">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
