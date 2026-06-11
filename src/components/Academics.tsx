@@ -14,7 +14,7 @@ const Counter: React.FC<{ end: number; suffix: string; label: string; delay: num
     if (isInView) {
       setTimeout(() => {
         let start = 0;
-        const duration = 2000;
+        const duration = 2500;
         const increment = end / (duration / 16);
 
         const updateCounter = () => {
@@ -26,31 +26,87 @@ const Counter: React.FC<{ end: number; suffix: string; label: string; delay: num
             setCount(end);
           }
         };
-        
+
         requestAnimationFrame(updateCounter);
       }, delay * 1000);
     }
   }, [isInView, end, delay]);
 
   return (
-    <motion.div 
-      ref={ref} 
-      className="flex flex-col items-center p-8 bg-white dark:bg-slate-800 rounded-3xl shadow-xl shadow-brand-100/50 dark:shadow-none border border-slate-50 dark:border-white/5 relative overflow-hidden group hover-target"
-      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+    <motion.div
+      ref={ref}
+      className="relative group hover-target"
+      initial={{ opacity: 0, y: 80, scale: 0.8 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay, type: "spring", stiffness: 100 }}
-      whileHover={{ y: -10 }}
+      transition={{ duration: 0.8, delay, type: "spring", stiffness: 80, damping: 12 }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-50 dark:from-brand-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <motion.div 
-        className="text-5xl md:text-6xl font-display font-black text-brand-500 mb-2 relative z-10"
-        animate={isInView ? { scale: [1, 1.2, 1] } : {}}
-        transition={{ duration: 0.5, delay: delay + 0.2 }}
+      {/* Glowing background effect */}
+      <motion.div
+        className="absolute -inset-1 bg-gradient-to-r from-brand-500 via-cyan-500 to-emerald-500 rounded-[2rem] opacity-0 group-hover:opacity-75 blur-xl transition-opacity duration-700"
+        animate={isInView ? {
+          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+        } : {}}
+        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        style={{ backgroundSize: '200% 200%' }}
+      />
+
+      <motion.div
+        className="relative flex flex-col items-center p-8 md:p-10 bg-white dark:bg-slate-900 rounded-[1.6rem] border border-slate-100 dark:border-slate-800 group-hover:border-transparent transition-all duration-500 overflow-hidden"
+        whileHover={{ y: -8 }}
       >
-        {count}{suffix}
+        {/* Animated gradient background on hover */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-brand-50 via-transparent to-cyan-50 dark:from-brand-950/50 dark:via-transparent dark:to-cyan-950/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          animate={isInView ? {
+            backgroundPosition: ['0% 0%', '100% 100%'],
+          } : {}}
+          transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+          style={{ backgroundSize: '200% 200%' }}
+        />
+
+        {/* Animated ring */}
+        <motion.div
+          className="absolute inset-4 rounded-[1.2rem] border-2 border-dashed border-brand-200 dark:border-brand-800 opacity-0 group-hover:opacity-50"
+          animate={isInView ? { rotate: [0, 360] } : {}}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+
+        <motion.div
+          className="text-5xl md:text-7xl font-display font-black bg-gradient-to-r from-brand-500 via-cyan-500 to-brand-500 bg-clip-text text-transparent mb-3 relative z-10"
+          animate={isInView ? {
+            scale: [1, 1.15, 1],
+            backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+          } : {}}
+          transition={{
+            scale: { duration: 0.6, delay: delay + 0.3 },
+            backgroundPosition: { duration: 3, repeat: Infinity, ease: "linear" }
+          }}
+          style={{ backgroundSize: '200% 200%' }}
+        >
+          {count}{suffix}
+        </motion.div>
+        <motion.div
+          className="text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-xs md:text-sm relative z-10 text-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: delay + 0.4 }}
+        >
+          {label}
+        </motion.div>
+
+        {/* Decorative dots */}
+        <motion.div
+          className="absolute top-4 right-4 w-2 h-2 rounded-full bg-brand-400 opacity-0 group-hover:opacity-100"
+          animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute bottom-4 left-4 w-2 h-2 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100"
+          animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+        />
       </motion.div>
-      <div className="text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest text-sm relative z-10">{label}</div>
     </motion.div>
   );
 };
